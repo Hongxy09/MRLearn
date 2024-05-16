@@ -1,7 +1,11 @@
-setwd('C:/Users/qi-ha/Desktop/MR_Output/1_correlation_analysis')
-input_file <- 'D:/Data4MR/exposure_IBM_ieu-a-2.vcf.gz'
+setwd(dirname(parent.frame(2)$filename))
+input_file <- './data/ieu-a-2.vcf.gz'
 threshold <- 5e-08
 output_fmt <- "png"
+
+
+# 筛选强关联的 SNP --------------------------------------------------------------
+
 
 # ---读取数据并转换为 TwoSampleMR 格式
 vcf_data <- readVcf(input_file)
